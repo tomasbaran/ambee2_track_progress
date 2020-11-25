@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ambee2_track_progress/widgets/cta_track_progress.dart';
 import 'package:ambee2_track_progress/widgets/my_footer.dart';
 import 'package:ambee2_track_progress/widgets/my_headline.dart';
+import 'package:ambee2_track_progress/widgets/input_email_textfield.dart';
 
 class InputEmailScreen extends StatelessWidget {
   @override
@@ -20,10 +21,7 @@ class InputEmailScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextField(
-                      onEditingComplete: () => null,
-                      onSubmitted: (value) => print(value),
-                    ),
+                    InputEmailTextfield(),
                     CTATrackProgress(),
                     MyFooter(),
                   ],
