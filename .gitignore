@@ -1,3 +1,6 @@
+# Sensitive
+lib/sensitive.dart
+
 # Miscellaneous
 *.class
 *.log
