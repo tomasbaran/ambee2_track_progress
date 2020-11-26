@@ -16,6 +16,13 @@ class MyTheme {
         fontSize: 22,
         fontWeight: FontWeight.w700,
       ),
+      bodyText1: TextStyle(
+        color: Colors.white,
+        decoration: TextDecoration.none,
+        fontSize: 24,
+        fontWeight: FontWeight.w500,
+        height: 1.3,
+      ),
     ),
   );
 }

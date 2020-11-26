@@ -15,14 +15,24 @@ class InputEmailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
+                flex: 2,
                 child: MyHeadline(),
               ),
               Expanded(
+                flex: 3,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InputEmailTextfield(),
-                    CTATrackProgress(),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InputEmailTextfield(),
+                        SizedBox(height: 32),
+                        CTATrackProgress(
+                          onPressed: () => Navigator.pushNamed(context, '/thank_you', arguments: {'email': 'preposielam@abc.sk'}),
+                        ),
+                      ],
+                    ),
                     MyFooter(),
                   ],
                 ),
