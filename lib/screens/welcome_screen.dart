@@ -4,7 +4,13 @@ import 'package:ambee2_track_progress/widgets/cta_track_progress.dart';
 import 'package:ambee2_track_progress/widgets/my_footer.dart';
 import 'package:ambee2_track_progress/widgets/my_headline.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,8 +34,15 @@ class WelcomeScreen extends StatelessWidget {
                         InputEmailTextfield(),
                         CTATrackProgress(
                           onPressed: () {
+                            setState(() {
+                              _isLoading = true;
+                            });
                             Navigator.pushNamed(context, '/input_email');
+                            setState(() {
+                              _isLoading = false;
+                            });
                           },
+                          isLoading: _isLoading,
                         ),
                       ],
                     ),

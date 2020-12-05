@@ -6,10 +6,18 @@ import 'package:ambee2_track_progress/widgets/my_footer.dart';
 import 'package:ambee2_track_progress/widgets/my_headline.dart';
 import 'package:ambee2_track_progress/widgets/input_email_textfield.dart';
 
-class InputEmailScreen extends StatelessWidget {
+class InputEmailScreen extends StatefulWidget {
+  @override
+  _InputEmailScreenState createState() => _InputEmailScreenState();
+}
+
+class _InputEmailScreenState extends State<InputEmailScreen> {
   String email = '';
 
+  bool _isLoading = false;
+
   void sendEmailAndFinish(BuildContext context, String email) async {
+    setState(() => _isLoading = true);
     try {
       ValidateEmail().test(email);
       await MyNodeApi().addSubscriber(email);
@@ -17,6 +25,7 @@ class InputEmailScreen extends StatelessWidget {
     } catch (e) {
       print(e);
     }
+    setState(() => _isLoading = false);
   }
 
   @override
@@ -51,9 +60,10 @@ class InputEmailScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 32),
                         CTATrackProgress(
-                          onPressed: () {
+                          onPressed: () async {
                             sendEmailAndFinish(context, email);
                           },
+                          isLoading: _isLoading,
                         ),
                       ],
                     ),
