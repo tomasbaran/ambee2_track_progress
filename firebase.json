@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ambee-progress", 
     "public": "build/web",
     "ignore": [
       "firebase.json",

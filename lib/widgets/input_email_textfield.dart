@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:ambee2_track_progress/theme/style.dart';
 
 class InputEmailTextfield extends StatelessWidget {
+  final Function onEditingComplete;
+  final Function onSubmitted;
+  final Function onChanged;
+
+  InputEmailTextfield({this.onEditingComplete, this.onSubmitted, this.onChanged});
+
   @override
   Widget build(BuildContext context) {
     return Hero(
@@ -29,8 +35,9 @@ class InputEmailTextfield extends StatelessWidget {
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
-                onEditingComplete: () => null,
-                onSubmitted: (value) => print(value),
+                onEditingComplete: onEditingComplete,
+                onChanged: onChanged,
+                onSubmitted: onSubmitted,
               ),
             ),
           ),

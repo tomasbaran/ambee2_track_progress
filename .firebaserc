@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "test-47a07"
+    "default": "test-47a07",
+    "production": "ambee-cloud"
   }
 }
