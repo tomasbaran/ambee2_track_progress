@@ -11,7 +11,7 @@ class ThankYouScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(sMainPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

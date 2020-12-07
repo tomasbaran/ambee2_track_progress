@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ambee2_track_progress/widgets/cta_track_progress.dart';
 import 'package:ambee2_track_progress/widgets/my_footer.dart';
 import 'package:ambee2_track_progress/widgets/my_headline.dart';
+import 'package:ambee2_track_progress/theme/style.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(sMainPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

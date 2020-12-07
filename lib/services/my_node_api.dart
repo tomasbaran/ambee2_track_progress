@@ -12,7 +12,7 @@ class MyNodeApi {
     http.Response _response = await http.post(Uri.https(_url, _path), /* headers: _headers ,*/ body: _body);
 
     if (_response.statusCode != 200 || _response.statusCode != 201)
-      throw 'Error #1 (coming from MailerLite server): \n\t status code: ${_response.statusCode} \n\t status message: ${_response.reasonPhrase}';
+      throw 'Error #1 (coming from MailerLite server): status code: ${_response.statusCode} status message: ${_response.reasonPhrase}';
     print(_response.body);
   }
 }

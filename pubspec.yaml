@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.1
+  another_flushbar: ^1.0.7
   google_fonts: ^1.1.1
   progress_indicators: ^0.1.5
 

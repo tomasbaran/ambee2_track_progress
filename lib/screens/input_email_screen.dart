@@ -1,10 +1,12 @@
 import 'package:ambee2_track_progress/services/my_node_api.dart';
 import 'package:ambee2_track_progress/services/validate_email.dart';
+import 'package:ambee2_track_progress/theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:ambee2_track_progress/widgets/cta_track_progress.dart';
 import 'package:ambee2_track_progress/widgets/my_footer.dart';
 import 'package:ambee2_track_progress/widgets/my_headline.dart';
 import 'package:ambee2_track_progress/widgets/input_email_textfield.dart';
+import 'package:another_flushbar/flushbar.dart';
 
 class InputEmailScreen extends StatefulWidget {
   @override
@@ -24,6 +26,14 @@ class _InputEmailScreenState extends State<InputEmailScreen> {
       Navigator.pushNamed(context, '/thank_you', arguments: {'email': 'preposielam@abc.sk'});
     } catch (e) {
       print(e);
+      Flushbar(
+        backgroundColor: Colors.redAccent,
+        title: e,
+        message: '\n\nIf you are unable to resolve the issue you can write me at tomas@ambeeapp.com ',
+        duration: Duration(seconds: 15),
+        margin: EdgeInsets.all(sMainPadding),
+        borderRadius: 20,
+      )..show(context);
     }
     setState(() => _isLoading = false);
   }
@@ -33,7 +43,7 @@ class _InputEmailScreenState extends State<InputEmailScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(sMainPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
