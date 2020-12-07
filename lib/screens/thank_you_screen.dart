@@ -4,10 +4,9 @@ import 'package:ambee2_track_progress/widgets/my_footer.dart';
 import 'package:ambee2_track_progress/widgets/my_headline.dart';
 
 class ThankYouScreen extends StatelessWidget {
-  final String email;
-  ThankYouScreen({this.email});
   @override
   Widget build(BuildContext context) {
+    final String email = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -34,7 +33,7 @@ class ThankYouScreen extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyText1,
                           ),
                           TextSpan(
-                            text: 'tomas@abc.com',
+                            text: email,
                             style: Theme.of(context).textTheme.bodyText1.copyWith(decoration: TextDecoration.underline),
                           ),
                         ]),

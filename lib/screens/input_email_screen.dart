@@ -23,7 +23,7 @@ class _InputEmailScreenState extends State<InputEmailScreen> {
     try {
       ValidateEmail().test(email);
       await MyNodeApi().addSubscriber(email);
-      Navigator.pushNamed(context, '/thank_you', arguments: {'email': 'preposielam@abc.sk'});
+      Navigator.pushNamed(context, '/thank_you', arguments: email);
     } catch (e) {
       print(e);
       Flushbar(
