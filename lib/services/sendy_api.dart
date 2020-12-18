@@ -1,8 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:ambee2_track_progress/env.dart';
 
-
-class MyNodeApi {
+class SendyApi {
   //DEV-MODE: node index.js
   // final String _url = 'localhost:3000';
   // final String _path = '/subscribe';
@@ -13,7 +12,7 @@ class MyNodeApi {
   // final String _url = 'us-central1-ambee-cloud.cloudfunctions.net';
   // final String _path = '/app/subscribe';
   // //RELEASE-MODE: sendy.tomasbaran.com server
-  final String _url = 'sendy.tomasbaran.com';
+  final String _url = sendyUrl;
   final String _path = '/subscribe';
 
   addSubscriber(String email) async {

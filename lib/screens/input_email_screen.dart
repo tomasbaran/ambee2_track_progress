@@ -1,4 +1,4 @@
-import 'package:ambee2_track_progress/services/my_node_api.dart';
+import 'package:ambee2_track_progress/services/sendy_api.dart';
 import 'package:ambee2_track_progress/services/validate_email.dart';
 import 'package:ambee2_track_progress/theme/style.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _InputEmailScreenState extends State<InputEmailScreen> {
     setState(() => _isLoading = true);
     try {
       ValidateEmail().test(email);
-      await MyNodeApi().addSubscriber(email);
+      await SendyApi().addSubscriber(email);
       Navigator.pushNamed(context, '/thank_you', arguments: email);
     } catch (e) {
       print(e);
