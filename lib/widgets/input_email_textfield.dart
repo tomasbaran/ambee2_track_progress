@@ -26,6 +26,7 @@ class InputEmailTextfield extends StatelessWidget {
             child: Card(
               color: Colors.transparent,
               child: TextField(
+                textCapitalization: TextCapitalization.none,
                 cursorColor: Colors.grey.shade600,
                 style: tsInputEmail,
                 decoration: InputDecoration(
